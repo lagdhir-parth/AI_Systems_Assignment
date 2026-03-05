@@ -2,7 +2,12 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const requiredEnvVars = ["PORT", "MONGODB_URI", "OPENROUTER_API_KEY"];
+const requiredEnvVars = [
+  "PORT",
+  "MONGODB_URI",
+  "OPENROUTER_API_KEY",
+  "allowed_origins",
+];
 
 requiredEnvVars.forEach((envVar) => {
   if (!process.env[envVar]) {
@@ -20,6 +25,7 @@ const env = {
   PORT: process.env.PORT,
   MONGODB_URI: process.env.MONGODB_URI,
   OPENROUTER_API_KEY: process.env.OPENROUTER_API_KEY,
+  allowed_origins: process.env.allowed_origins,
 };
 
 export default env;
