@@ -28,8 +28,6 @@ app.use(
   })
 );
 
-app.options("*", cors());
-
 app.get("/health", (req, res) => {
   res.send("OK");
 });
