@@ -3,6 +3,7 @@ import cors from "cors";
 import helmet from "helmet";
 import { rateLimit } from "express-rate-limit";
 import { xssFilter } from "helmet";
+import env from "./src/config/env.js";
 
 const app = express();
 
@@ -18,7 +19,7 @@ app.use(express.json());
 app.use(helmet());
 app.use(xssFilter());
 
-const allowedOrigins = ["http://localhost:3000", "http://localhost:5173"];
+const allowedOrigins = env.allowed_origins.split(",");
 app.use(cors({ origin: allowedOrigins }));
 
 app.get("/health", (req, res) => {
