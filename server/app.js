@@ -6,6 +6,16 @@ import env from "./src/config/env.js";
 
 const app = express();
 
+/**
+ * Health check endpoint
+ * Used by deployment platforms to verify server status.
+ * @route GET /health
+ * @returns {string} OK
+ */
+app.get("/health", (req, res) => {
+  res.send("OK");
+});
+
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 100,
@@ -27,16 +37,6 @@ app.use(
     credentials: true,
   })
 );
-
-/**
- * Health check endpoint
- * Used by deployment platforms to verify server status.
- * @route GET /health
- * @returns {string} OK
- */
-app.get("/health", (req, res) => {
-  res.send("OK");
-});
 
 app.use("/api/ai", (await import("./src/routes/aiRoutes.js")).default);
 
