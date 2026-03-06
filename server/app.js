@@ -28,6 +28,12 @@ app.use(
   })
 );
 
+/**
+ * Health check endpoint
+ * Used by deployment platforms to verify server status.
+ * @route GET /health
+ * @returns {string} OK
+ */
 app.get("/health", (req, res) => {
   res.send("OK");
 });

@@ -1,6 +1,11 @@
 import axios from "axios";
 import env from "../../config/env.js";
 
+/**
+ * callAI - Calls the AI API with the given prompt.
+ * @param {string} prompt - The prompt to send to the AI.
+ * @returns {Promise<string>} The AI's response.
+ */
 async function callAI(prompt) {
   let response;
   try {

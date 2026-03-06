@@ -6,6 +6,14 @@ import asyncHandler from "../utils/AsyncHandler.js";
 import ApiError from "../utils/ApiError.js";
 import ApiResponse from "../utils/ApiResponse.js";
 
+/**
+ * proposalController - Handles proposal generation using AI.
+ * @route POST /api/ai/proposal
+ * @body {string} budget - Budget for the event.
+ * @body {string} event_type - Type of the event (e.g., conference, wedding).
+ * @body {string} company_size - Size of the company (e.g., small, medium, large).
+ * @returns {object} AI-generated proposal details.
+ */
 const proposalController = asyncHandler(async (req, res) => {
   try {
     const { budget, event_type, company_size } = req.body || {};

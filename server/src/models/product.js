@@ -1,5 +1,11 @@
 import mongoose from "mongoose";
 
+/**
+ * productSchema - Mongoose schema for sustainable products.
+ * This schema defines the structure of documents in the Product collection, which includes fields for product name, description, category, SEO tags, and sustainability filters.
+ * The sustainability filters are restricted to a predefined set of allowed values.
+ * Each product document also includes timestamps for when it was created and last updated.
+ */
 const productSchema = new mongoose.Schema(
   {
     product_name: {
@@ -41,7 +47,7 @@ const productSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-  },
+  }
 );
 
 const Product = mongoose.model("Product", productSchema);

@@ -1,3 +1,10 @@
+/**
+ * proposalPrompt - Generates a prompt for AI to create a sustainable product proposal for corporate events.
+ * @param {string} budget - Budget for the event.
+ * @param {string} event_type - Type of the event (e.g., conference, wedding).
+ * @param {string} company_size - Size of the company (e.g., small, medium, large).
+ * @returns {string} The prompt to send to the AI.
+ */
 const proposalPrompt = (budget, event_type, company_size) => {
   const prompt = `
 You are an AI assistant that generates B2B sustainable product proposals for corporate clients.

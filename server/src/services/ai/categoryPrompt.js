@@ -1,3 +1,9 @@
+/**
+ * categoryPrompt - Generates a prompt for AI to categorize a product and suggest SEO tags.
+ * @param {string} product_name - Name of the product.
+ * @param {string} product_description - Description of the product.
+ * @returns {string} The prompt to send to the AI.
+ */
 const categoryPrompt = (product_name, product_description) => {
   const prompt = `
 You are an AI assistant for a sustainable ecommerce platform.

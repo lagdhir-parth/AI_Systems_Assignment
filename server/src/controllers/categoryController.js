@@ -7,6 +7,13 @@ import asyncHandler from "../utils/AsyncHandler.js";
 import ApiError from "../utils/ApiError.js";
 import ApiResponse from "../utils/ApiResponse.js";
 
+/**
+ * categoryController - Handles product category generation using AI.
+ * @route POST /api/ai/category
+ * @body {string} product_name - Name of the product.
+ * @body {string} product_description - Description of the product.
+ * @returns {object} AI-generated category info and SEO tags.
+ */
 const categoryController = asyncHandler(async (req, res) => {
   try {
     const { product_name, product_description } = req.body || {};
